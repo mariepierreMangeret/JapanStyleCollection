@@ -1,0 +1,3 @@
+jsc_platform_home:
+    path:     /
+    defaults: { _controller: JSCPlatformBundle:Platform:index }

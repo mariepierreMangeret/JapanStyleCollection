@@ -1,0 +1,4 @@
+jsc_platform:
+    resource: "@JSCPlatformBundle/Resources/config/routing.yml"
+    prefix:   /
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Metas -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+        <!-- Title  -->
+        <title>{% block title %}Japan Style Collection{% endblock %}</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}" />  
+        <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon-57x57.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/apple-touch-icon-72x72.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img/apple-touch-icon-114x114.png') }}">
+
+        <!-- Plugins -->
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/plugins.css') }}"/>
+
+        <!-- Core Style Css -->
+            <link rel="stylesheet" href="{{ asset('css/base.css') }}"/>
+        {% endblock %}       
+    </head>
+
+    <body>
+        <!-- Start Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- start logo -->
+                <a class="logo" href="javascript:void(0);" data-scroll-nav="0">
+                    <img src="{{ asset('img/logo-white.png') }}" alt="Japan Style Collection" title="Japan Style Collection">
+                </a>
+                <!-- end Logo -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"><i class="fas fa-bars"></i></span>
+                </button>
+                <!-- navbar links -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    {% include '::navbar-top.html.twig' %}
+                </div>
+                <!-- end navbar links -->
+            </div>
+        </nav>
+        <!-- End Navbar  -->
+
+        {% block body %}{% endblock %}
+
+        <!--  Start Footer Section -->
+        <footer class="bg-white">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <!-- start footer logo -->
+                        <div class="col-md-12 col-sm-12 text-center wow fadeInUp">
+                            <div class="text-center">
+                                <a href="javascript:void(0);"><img src="{{ asset('img/logo-black.png') }}" alt="Japan Style Collection" title="Japan Style Collection"></a>
+                            </div>
+                            <span class="font-size11 alt-font text-uppercase  display-block letter-spacing-1 text-dark-gray margin-15px-top margin-30px-bottom xs-margin-fifteen">D&eacute;fil&eacute;s de mode japonais en France</span>
+                        </div>
+                        <!-- end footer logo -->
+                        <!-- start social media link -->
+                        <div class="col-md-12 col-sm-12 text-center wow fadeInUp">
+                            <div class="footer-social">
+                                <a href="javascript:void(0);"><i class="fab fa-facebook-f"></i></a>
+                                <a href="javascript:void(0);"><i class="fab fa-instagram"></i></a>
+                                <a href="javascript:void(0);"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                        <!-- end social media link -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom bg-black">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 text-center">
+                            <span class="font-size12 text-uppercase letter-spacing-1">© 2018 Japan Style Collection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="back-to-top" class="back-to-top reveal">
+                <i class="fa fa-angle-up"></i>
+            </div>
+        </footer>
+        <!-- End Footer Section -->
+
+        {% block javascripts %}
+            <!-- jQuery -->
+            <script src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
+            <script src="{{ asset('js/jquery-migrate-3.0.0.min.js') }}"></script>
+
+            <!-- popper.min -->
+            <script src="{{ asset('js/popper.min.js') }}"></script>
+
+            <!-- bootstrap -->
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+            <!-- scrollIt -->
+            <script src="{{ asset('js/scrollIt.min.js') }}"></script>
+
+            <!-- animated.headline -->
+            <script src="{{ asset('js/animated.headline.js') }}"></script>
+
+            <!-- wow -->
+            <script src="{{ asset('js/wow.js') }}"></script>
+                        
+            <!-- custom scripts -->
+            <script src="{{ asset('js/scripts.js') }}"></script>
+
+        {% endblock %}
+    </body>
+</html>
