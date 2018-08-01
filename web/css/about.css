@@ -1,0 +1,13 @@
+/*============================== 
+    Team
+================================*/
+.team .owl-theme .owl-dot span {
+  border-color: #F24259; }
+
+.team-style img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: 0.3s; }
+  .team-style img:hover {
+    -webkit-filter: none;
+    filter: none; }
