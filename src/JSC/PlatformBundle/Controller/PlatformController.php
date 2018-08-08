@@ -4,6 +4,7 @@ namespace JSC\PlatformBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use JSC\PlatformBundle\Entity\News;
+use JSC\PlatformBundle\Entity\Event;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
@@ -13,15 +14,24 @@ class PlatformController extends Controller
     {
     	$nbPerPage = 3;
 
-        $news = $this
-          ->getDoctrine()
-          ->getManager()
-          ->getRepository('JSCPlatformBundle:News')
-          ->myNewsIndex($nbPerPage);
+      $news = $this
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('JSCPlatformBundle:News')
+        ->myNewsIndex($nbPerPage);
 
-        return $this->render(
-        	'JSCPlatformBundle::index.html.twig',array(
-        	'news'		=> $news,
-        ));
+      $nbEventPerPage = 4;
+
+      $events = $this
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('JSCPlatformBundle:Event')
+        ->myEventsIndex($nbEventPerPage);
+
+      return $this->render(
+      	'JSCPlatformBundle::index.html.twig',array(
+      	'news'		=> $news,
+        'events'    => $events,
+      ));
     }
 }

@@ -1,0 +1,22 @@
+<section class="services" data-scroll-index="3">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 center-col margin-30px-bottom sm-margin-40px-bottom xs-margin-30px-bottom text-center wow fadeInUp">
+                <div class="alt-font margin-5px-bottom text-uppercase text-small letter-spacing-1" style="color:#DF57A0;">Evenements</div>
+                <h5 class="margin-10px-bottom font-weight-300">Nos derniers défilés de mode</h5>
+                <div class="separator-line-horrizontal-medium-light2 bg-pink center-col"></div>
+            </div>
+        </div>
+        <div class="row">
+            {% for event in events %}
+                <div data-wow-duration="0.4s" class="col-lg-3 col-md-6 margin-30px-bottom xs-margin-20px-bottom wow fadeInUp">
+                    <div class="bg-white border border-width-2 border-color-extra-light-gray text-center feature-box2">
+                        <a href="{{ event.link }}" target="_blank">
+                            <img src="{{ asset(['img/events/', event.image]|join) }}" alt="brand">
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
