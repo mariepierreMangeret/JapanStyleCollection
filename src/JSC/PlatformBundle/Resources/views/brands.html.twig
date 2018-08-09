@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="{{ asset('css/brands.css') }}"/>
+
+<section class="team" data-scroll-index="5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 center-col margin-30px-bottom sm-margin-30px-bottom xs-margin-30px-bottom text-center wow fadeInUp">
+                <div class="alt-font margin-5px-bottom text-uppercase text-small letter-spacing-1" style="color:#DF57A0;">Marques</div>
+                <h5 class="margin-10px-bottom font-weight-300">Découvrez toutes nos marques partenaires</h5>
+                <div class="separator-line-horrizontal-medium-light2 bg-pink center-col"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="owl-carousel owl-theme col-sm-12">
+                {% for brand in brands %}
+                    <div class="xs-margin-20px-bottom text-center">
+                        <div data-wow-duration="0.4s" class="margin-30px-bottom xs-margin-20px-bottom wow fadeInUp">      
+                            <div class="bg-white border border-width-2 border-color-extra-light-gray text-center padding-30px-tb xs-padding-15px-lr feature-box2">
+                                <div class="display-inline-block margin-20px-bottom xs-margin-10px-bottom">
+                                    <img src="{{ asset(['img/brands/', brand.image]|join) }}" alt="{{ brand.name }}">
+                                </div>
+                                <div class="text-center">
+                                    <div class="alt-font text-extra-dark-gray margin-10px-bottom" style="font-size:10px;">{{ brand.urlWebsite }}</div>
+                                    <div class="separator-line-horrizontal-medium-light3 bg-pink center-col margin-15px-bottom margin-15px-top"></div>
+                                    <p class="width-75 md-width-90 xs-width-100 center-col no-margin-bottom">{{ brand.concept }}</p>
+
+                                    <div class="social-links">
+                                        {% if brand.urlFacebook == true %}
+                                            <a class="d-inline-block margin-10px-right" href="{{ brand.urlFacebook }}" target="_blank"><i class="fab fa-facebook-f text-medium-gray text-medium"></i></a>
+                                        {% endif %}
+                                        {% if brand.urlTwitter == true %}
+                                            <a class="d-inline-block margin-10px-right" href="{{ brand.urlTwitter }}" target="_blank"><i class="fab fa-twitter text-medium-gray text-medium"></i></a>
+                                        {% endif %}
+                                        {% if brand.urlInstagram == true %}
+                                            <a class="d-inline-block border-radius-100" href="{{ brand.urlInstagram }}" target="_blank"><i class="fab fa-instagram text-medium-gray text-medium"></i></a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
