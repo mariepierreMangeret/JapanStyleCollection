@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="{{ asset('css/models.css') }}"/>
+
+<section class="team" data-scroll-index="4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 col-sm-12 center-col margin-30px-bottom sm-margin-20px-bottom xs-margin-30px-bottom text-center last-paragraph-no-margin wow fadeInUp">
+                <div class="alt-font margin-5px-bottom text-uppercase letter-spacing-1" style="color:#DF57A0;">Modèles</div>
+                <h5 class="margin-10px-bottom font-weight-300">Découvrez nos modèles</h5>
+                <div class="separator-line-horrizontal-medium-light2 bg-pink center-col"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="owl-carousel owl-theme col-sm-12">
+                {% for model in models %}
+                    <div class="xs-margin-20px-bottom text-center">
+                        <div class="team-member-img">
+                            <img class="img-responsive" src="{{ asset(['img/models/', model.image]|join) }}" alt="{{ model.name }}" style="heigth:150px;">
+                        </div>
+                        <div class="text-center margin-25px-top margin-15px-bottom  padding-15px-bottom border-bottom">
+                            <div class="text-extra-dark-gray font-weight-600 text-uppercase font-size14 alt-font">{{ model.name }}</div>
+                            <div class="text-uppercase font-size11">{{ model.position }}</div>
+                        </div>
+                        <div class="social-links">
+                            {% if model.urlFacebook == true %}
+                                <a class="d-inline-block margin-10px-right" href="{{ model.urlFacebook }}" target="_blank"><i class="fab fa-facebook-f text-medium-gray text-medium"></i></a>
+                            {% endif %}
+                            {% if model.urlTwitter == true %}
+                                <a class="d-inline-block margin-10px-right" href="{{ model.urlTwitter }}" target="_blank"><i class="fab fa-twitter text-medium-gray text-medium"></i></a>
+                            {% endif %}
+                            {% if model.urlInstagram == true %}
+                                <a class="d-inline-block border-radius-100" href="{{ model.urlInstagram }}" target="_blank"><i class="fab fa-instagram text-medium-gray text-medium"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

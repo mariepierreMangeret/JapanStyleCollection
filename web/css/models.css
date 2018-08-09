@@ -1,0 +1,9 @@
+.team {
+  background: #eee;
+}
+
+.team .owl-theme .owl-dot span {
+  border-color: #F24259; }
+
+.social-links a:hover i {
+    color: #DF57A0; }
