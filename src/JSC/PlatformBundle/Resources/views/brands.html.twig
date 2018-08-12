@@ -19,7 +19,11 @@
                                     <img src="{{ asset(['img/brands/', brand.image]|join) }}" alt="{{ brand.name }}">
                                 </div>
                                 <div class="text-center">
-                                    <div class="alt-font text-extra-dark-gray margin-10px-bottom" style="font-size:10px;">{{ brand.urlWebsite }}</div>
+                                    <div class="alt-font text-extra-dark-gray margin-10px-bottom" style="font-size:10px;">
+                                        <a class="d-inline-block margin-10px-right" href="{{ brand.urlWebsite }}" target="_blank">
+                                            {{ brand.urlWebsite }}
+                                        </a>
+                                    </div>
                                     <div class="separator-line-horrizontal-medium-light3 bg-pink center-col margin-15px-bottom margin-15px-top"></div>
                                     <p class="width-75 md-width-90 xs-width-100 center-col no-margin-bottom">{{ brand.concept }}</p>
 

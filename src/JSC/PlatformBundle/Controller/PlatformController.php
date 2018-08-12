@@ -7,12 +7,15 @@ use JSC\PlatformBundle\Entity\News;
 use JSC\PlatformBundle\Entity\Event;
 use JSC\PlatformBundle\Entity\Model;
 use JSC\PlatformBundle\Entity\Brand;
+use JSC\PlatformBundle\Entity\Contact;
+use JSC\PlatformBundle\Form\ContactType;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
 class PlatformController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
     	$nbPerPage = 3;
 
@@ -41,7 +44,6 @@ class PlatformController extends Controller
       ->getManager()
       ->getRepository('JSCPlatformBundle:Brand')
       ->myBrandsIndex();
-
 
       return $this->render(
       	'JSCPlatformBundle::index.html.twig',array(

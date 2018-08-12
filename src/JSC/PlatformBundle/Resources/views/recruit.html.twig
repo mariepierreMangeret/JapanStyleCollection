@@ -1,0 +1,119 @@
+
+<div class="bg-light-gray">
+    <div class="container-fluid">
+        <div class="row" data-scroll-index="6">
+            <!-- start recruit -->
+            <div class="col-lg-6 col-md-12 cover-background" style="background-image: url({{ asset('img/recruit.png') }});">
+        
+                <div class="sm-padding-50px-tb sm-no-padding-lr text-center " style="padding:30px;">
+                    <div class="wow fadeInUp">
+                        <div class="alt-font margin-5px-bottom text-uppercase letter-spacing-1" style="color:#DF57A0;">Recrutement</div>
+                        <h5 class="font-weight-300 margin-10px-bottom" style="color:white;">Souhaitez-vous faire partie de l'aventure ?</h5>
+                        <div class="margin-30px-bottom sm-margin-40px-bottom xs-margin-30px-bottom separator-line-horrizontal-medium-light2 bg-pink center-col"></div>
+                    </div>
+                    <div id="Dicorion" class="Dicorion-style">
+                        <div class="card wow fadeInUp">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Devenir modèle ?
+                            </button>
+                          </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#Dicorion">
+                                <div class="card-body" style="color:white;">
+                                    Vous êtes passionnée de mode japonaise et vous rêvez de défiler pour une marque venant de Shibuya et Harajuku ?<br>
+                                    Nous organisons des castings tout au long de l'année pour nos défilés de mode ! <br> <br>
+
+                                    Participer à notre prochain casting ? Vous trouverez toutes les informations sur notre page facebook !
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card wow fadeInUp">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Devenir membre de notre équipe ?
+                            </button>
+                          </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#Dicorion">
+                                <div class="card-body" style="color:white;">
+                                    Nous sommes constament à la recherche de nouveaux talents ! <br>
+                                    Plusieurs métiers sont à pourvoir (photographe, habilleuse,...)<br><br>
+
+                                    N'hésitez pas à postuler et à nous contacter via le formulaire ci-joint.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card wow fadeInUp">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Devenir partenaire ?
+                            </button>
+                          </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#Dicorion">
+                                <div class="card-body" style="color:white;">
+                                    Vous souhaitez faire découvrir votre marque en France ?<br>
+                                    Nous organisons pour vous votre propre défilé de mode dans les plus grandes villes de France (Paris, Lyon et Marseile).<br>
+                                    N'hésitez pas à nous contacter via le formulaire ci-joint.
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end recruit -->
+            <!-- start get in touch -->
+                <div class="col-lg-6" data-scroll-index="7">
+                    <div class="sm-padding-50px-tb sm-no-padding-lr" style="padding:30px;">
+                        <div class="wow fadeInUp">
+                            <div class="alt-font margin-5px-bottom text-uppercase  text-center letter-spacing-1" style="color:#DF57A0;">Contact</div>
+                            <h5 class="font-weight-300 margin-10px-bottom text-center">Veuillez remplir le formulaire pour nous contacter</h5>
+                            <div class="margin-70px-bottom sm-margin-40px-bottom xs-margin-30px-bottom separator-line-horrizontal-medium-light2 bg-pink center-col"></div>
+                        </div>
+
+                        {% for message in app.session.flashbag.get('notice') %}
+                            <p class="alert alert-success">{{ message }}</p> 
+                        {% endfor %}
+
+                        <div class="no-margin-lr" id="success-contact-form" style="display: none;"></div>
+
+                        {% if form is defined %}
+                            {{ form_start(form) }}
+                            {{ form_errors(form) }}
+                                <form id="contactForm" method="post" class="contact-form wow fadeInUp" data-wow-duration="0.6s" action="{{ path('jsc_platform_home') }}">
+                                    <div class="row">
+                                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                                            {{ form_widget(form.name, {'attr': {'class': 'input'}}) }}
+                                        </div>
+                                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                            {{ form_widget(form.email, {'attr': {'class': 'input'}}) }}
+                                        </div>
+                                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                                            {{ form_widget(form.phone, {'attr': {'class': 'input'}}) }}
+                                        </div>
+                                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                            {{ form_widget(form.subject, {'attr': {'class': 'input'}}) }}
+                                        </div>
+                                        <div class="col-md-12 wow fadeInUp" data-wow-delay="0.6s">
+                                            {{ form_widget(form.message, {'attr': {'class': 'input'}}) }}
+                                        </div>
+                                        <div class="col-md-12 text-center wow fadeInUp" data-wow-delay="0.8s">
+                                            <input class="btn" name="Send" type="submit" value="Envoyer">
+                                        </div>
+                                    </div>
+                                    {{ form_rest(form) }}
+                                    {{ form_end(form) }}
+                                </form>
+                        {% endif %}
+                    </div>
+                </div>
+            <!-- end get in touch -->
+        </div>
+
+    </div>
+</div>
