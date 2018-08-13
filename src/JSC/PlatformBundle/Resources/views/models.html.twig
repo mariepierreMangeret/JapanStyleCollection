@@ -14,7 +14,7 @@
                 {% for model in models %}
                     <div class="xs-margin-20px-bottom text-center">
                         <div class="team-member-img">
-                            <img class="img-responsive" src="{{ asset(['img/models/', model.image]|join) }}" alt="{{ model.name }}" style="heigth:150px;">
+                            {% thumbnail model.image,'big' %}
                         </div>
                         <div class="text-center margin-25px-top margin-15px-bottom  padding-15px-bottom border-bottom">
                             <div class="text-extra-dark-gray font-weight-600 text-uppercase font-size14 alt-font">{{ model.name }}</div>

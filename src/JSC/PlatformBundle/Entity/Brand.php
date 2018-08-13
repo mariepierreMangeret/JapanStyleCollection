@@ -3,6 +3,8 @@
 namespace JSC\PlatformBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Sonata\MediaBundle\Model\MediaInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Brand
@@ -29,9 +31,9 @@ class Brand
     private $name;
 
     /**
-     * @var string
+     * @var \Application\Sonata\MediaBundle\Entity\Media
      *
-     * @ORM\Column(name="image", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, fetch="LAZY")
      */
     private $image;
 
@@ -52,21 +54,21 @@ class Brand
     /**
      * @var string
      *
-     * @ORM\Column(name="urlFacebook", type="string", length=255)
+     * @ORM\Column(name="urlFacebook", type="string", length=255, nullable=true)
      */
     private $urlFacebook;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="urlInstagram", type="string", length=255)
+     * @ORM\Column(name="urlInstagram", type="string", length=255, nullable=true)
      */
     private $urlInstagram;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="urlTwitter", type="string", length=255)
+     * @ORM\Column(name="urlTwitter", type="string", length=255, nullable=true)
      */
     private $urlTwitter;
 
@@ -108,21 +110,19 @@ class Brand
     /**
      * Set image
      *
-     * @param string $image
+     * @param MediaInterface $image
      *
      * @return Brand
      */
-    public function setImage($image)
+    public function setImage(MediaInterface $media)
     {
-        $this->image = $image;
-
-        return $this;
+        $this->image = $media;
     }
 
     /**
      * Get image
      *
-     * @return string
+     * @return MediaInterface
      */
     public function getImage()
     {

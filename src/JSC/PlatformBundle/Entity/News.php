@@ -3,6 +3,8 @@
 namespace JSC\PlatformBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Sonata\MediaBundle\Model\MediaInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * News
@@ -42,6 +44,12 @@ class News
      */
     private $date;
 
+    /**
+     * @var \Application\Sonata\MediaBundle\Entity\Media
+     *
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, fetch="LAZY")
+     */
+    private $image;
 
     /**
      * Get id
@@ -123,6 +131,28 @@ class News
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set image
+     *
+     * @param MediaInterface $image
+     *
+     * @return News
+     */
+    public function setImage(MediaInterface $media)
+    {
+        $this->image = $media;
+    }
+
+    /**
+     * Get image
+     *
+     * @return MediaInterface
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }
 

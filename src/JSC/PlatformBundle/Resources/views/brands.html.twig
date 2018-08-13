@@ -16,7 +16,7 @@
                         <div data-wow-duration="0.4s" class="margin-30px-bottom xs-margin-20px-bottom wow fadeInUp">      
                             <div class="bg-white border border-width-2 border-color-extra-light-gray text-center padding-30px-tb xs-padding-15px-lr feature-box2">
                                 <div class="display-inline-block margin-20px-bottom xs-margin-10px-bottom">
-                                    <img src="{{ asset(['img/brands/', brand.image]|join) }}" alt="{{ brand.name }}">
+                                    {% thumbnail brand.image,'big' %}
                                 </div>
                                 <div class="text-center">
                                     <div class="alt-font text-extra-dark-gray margin-10px-bottom" style="font-size:10px;">

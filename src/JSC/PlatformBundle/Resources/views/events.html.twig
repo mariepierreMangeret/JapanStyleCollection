@@ -12,7 +12,7 @@
                 <div data-wow-duration="0.4s" class="col-lg-3 col-md-6 margin-30px-bottom xs-margin-20px-bottom wow fadeInUp">
                     <div class="bg-white border border-width-2 border-color-extra-light-gray text-center feature-box2">
                         <a href="{{ event.link }}" target="_blank">
-                            <img src="{{ asset(['img/events/', event.image]|join) }}" alt="brand">
+                            {% thumbnail event.image,'big' %}
                         </a>
                     </div>
                 </div>

@@ -13,3 +13,27 @@ services:
         # this means you cannot fetch services directly from the container via $container->get()
         # if you need to do this, you can override this setting on individual services
         public: false
+
+    admin.news:
+        class: JSC\PlatformBundle\Admin\NewAdmin
+        arguments: [~, JSC\PlatformBundle\Entity\News, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Nouveautés, group: Nouveautes }
+
+    admin.event:
+        class: JSC\PlatformBundle\Admin\EventAdmin
+        arguments: [~, JSC\PlatformBundle\Entity\Event, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Evènements, group: Evènements }
+
+    admin.model:
+        class: JSC\PlatformBundle\Admin\ModelAdmin
+        arguments: [~, JSC\PlatformBundle\Entity\Model, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Modèles, group: Modèles }
+
+    admin.brand:
+        class: JSC\PlatformBundle\Admin\BrandAdmin
+        arguments: [~, JSC\PlatformBundle\Entity\Brand, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Marques, group: Marques }
