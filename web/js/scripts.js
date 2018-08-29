@@ -90,13 +90,13 @@ $(function() {
         if(bodyScroll > 100){
 
             navbar.addClass("nav-scroll");
-            logo.attr('src', 'img/logo-dark.png');
+            logo.attr('src', '/JapanStyleCollection/web/img/logo-dark.png');
 
         }else{
 
             navbar.removeClass("nav-scroll");
-            logo.attr('src', 'img/logo-light.png');
-            navbloglogo.attr('src', 'img/logo-dark.png');
+            logo.attr('src', '/JapanStyleCollection/web/img/logo-light.png');
+            navbloglogo.attr('src', '/JapanStyleCollection/web/img/logo-dark.png');
         }
     });
     
